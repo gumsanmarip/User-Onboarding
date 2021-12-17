@@ -15,5 +15,5 @@ const formSchema = yup.object().shape({
       .min(3, 'Password has to be more than three characters!'),
     tos: yup.boolean().oneOf([true], 'accept the terms.')
   })
-  
-  export default formSchema;
+
+  export default formSchema; 

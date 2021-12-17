@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
-import Form from './Form';
-import User from './User';
+import Form from './components/Form';
+import User from './components/User';
 import axios from 'axios';
-import schema from './validation/formSchema'
+import schema from './components/formSchema'
 import * as yup from 'yup'
 
 const initialFormValues = {
@@ -28,7 +28,7 @@ export default function App() {
   const getUsers = () => {
     axios.get('https://reqres.in/api/users')
       .then(resp => {
-        setUsers(resp.data);
+        setUsers(resp.data.data);
       }).catch(err => console.error(err))
   }
 
@@ -93,5 +93,5 @@ export default function App() {
         })
       }
     </div>
-  )
+  );
 }
